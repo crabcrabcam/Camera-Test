@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eJn-yM-4Ud">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tAc-iE-Eez">
+                                <rect key="frame" x="254" y="99" width="93" height="30"/>
+                                <state key="normal" title="Pick a picture"/>
+                                <connections>
+                                    <action selector="pickPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fS7-ch-gWP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z3j-tE-2zf">
+                                <rect key="frame" x="0.0" y="169" width="600" height="431"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="z3j-tE-2zf" secondAttribute="bottom" id="3im-Hj-Pxk"/>
+                            <constraint firstItem="z3j-tE-2zf" firstAttribute="top" secondItem="tAc-iE-Eez" secondAttribute="bottom" constant="40" id="UDO-m1-Ptv"/>
+                            <constraint firstAttribute="trailing" secondItem="z3j-tE-2zf" secondAttribute="trailing" id="aQ0-wt-bbS"/>
+                            <constraint firstItem="tAc-iE-Eez" firstAttribute="centerX" secondItem="z3j-tE-2zf" secondAttribute="centerX" id="oVk-fT-dKO"/>
+                            <constraint firstItem="z3j-tE-2zf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="orm-uA-Chb"/>
+                            <constraint firstItem="tAc-iE-Eez" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="tPg-Vx-X1c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lz2-0a-twH"/>
+                    <connections>
+                        <outlet property="imageView" destination="z3j-tE-2zf" id="gHj-Hz-AlA"/>
+                        <outlet property="pickButton" destination="tAc-iE-Eez" id="lie-ev-pjh"/>
+                        <segue destination="kFc-aw-WJe" kind="show" identifier="takePicture" id="wdS-Xd-weh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="443"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="e05-Cb-B1O">
+            <objects>
+                <viewController title="Camera" id="kFc-aw-WJe" customClass="CameraViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Au2-m8-uvJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="fjh-uv-5H3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Wb-Av-AOg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiZ-Du-l6W">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="1" green="0.066666666666666666" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg4-zI-dVC">
+                                <rect key="frame" x="277" y="550" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Erc-tB-UwY"/>
+                                    <constraint firstAttribute="height" constant="45" id="oak-pN-26m"/>
+                                </constraints>
+                                <state key="normal" image="CameraIcon"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="kFc-aw-WJe" eventType="touchUpInside" id="Lrv-wN-shA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xg4-zI-dVC" firstAttribute="centerX" secondItem="7Wb-Av-AOg" secondAttribute="centerX" id="AAE-0m-uPx"/>
+                            <constraint firstItem="BiZ-Du-l6W" firstAttribute="top" secondItem="Au2-m8-uvJ" secondAttribute="bottom" id="ENz-GJ-R07"/>
+                            <constraint firstItem="fjh-uv-5H3" firstAttribute="top" secondItem="Xg4-zI-dVC" secondAttribute="bottom" constant="5" id="RcK-me-dW1"/>
+                            <constraint firstItem="BiZ-Du-l6W" firstAttribute="leading" secondItem="7Wb-Av-AOg" secondAttribute="leading" id="bxA-pj-sH1"/>
+                            <constraint firstAttribute="trailing" secondItem="BiZ-Du-l6W" secondAttribute="trailing" id="mqn-Lb-me6"/>
+                            <constraint firstItem="fjh-uv-5H3" firstAttribute="top" secondItem="BiZ-Du-l6W" secondAttribute="bottom" id="qfZ-6x-QrB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="1Oc-Yy-gIf">
+                        <barButtonItem key="rightBarButtonItem" image="Reverse Camera" id="8LM-SN-eGa">
+                            <connections>
+                                <action selector="changeCamera:" destination="kFc-aw-WJe" id="AGd-aA-Ak3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraView" destination="BiZ-Du-l6W" id="Tgn-3e-tXZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVo-p6-RVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2154" y="368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vW5-FM-Lnl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eJn-yM-4Ud" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nac-5g-GxB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="q8z-PT-TVq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPv-bw-1Z9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="443"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CameraIcon" width="512" height="512"/>
+        <image name="Reverse Camera" width="32" height="32"/>
+    </resources>
+</document>
